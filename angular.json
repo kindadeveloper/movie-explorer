@@ -50,6 +50,27 @@
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
+            },
+            "optimized": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.optimized.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all"
+            },
+            "unoptimized": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.unoptimized.ts"
+                }
+              ],
+              "optimization": false,
+              "sourceMap": true,
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"
@@ -62,9 +83,15 @@
             },
             "development": {
               "buildTarget": "movie-explorer:build:development"
+            },
+            "optimized": {
+              "buildTarget": "movie-explorer:build:optimized"
+            },
+            "unoptimized": {
+              "buildTarget": "movie-explorer:build:unoptimized"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "unoptimized"
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
