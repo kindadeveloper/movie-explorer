@@ -1,0 +1,40 @@
+<div class="layout"> 
+  <aside class="side-nav">
+    <div class="menu-links">
+      <button
+        pButton
+        label="Dashboard"
+        icon="pi pi-home"
+        routerLink="/dashboard"
+        routerLinkActive="p-button-outlined"
+        class="p-button-text w-full text-left"
+      ></button>
+
+      <button
+        pButton
+        label="Change Detection"
+        icon="pi pi-sync"
+        routerLink="/change-detection"
+        routerLinkActive="p-button-outlined"
+        class="p-button-text w-full text-left"
+      ></button>
+
+      <button
+        pButton
+        label="Web Workers"
+        icon="pi pi-cloud-download"
+        routerLink="/web-workers"
+        routerLinkActive="p-button-outlined"
+        class="p-button-text w-full text-left"
+      ></button>
+    </div>
+
+    <div style="margin-top: auto;">
+      <app-cd-counter></app-cd-counter>
+    </div>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

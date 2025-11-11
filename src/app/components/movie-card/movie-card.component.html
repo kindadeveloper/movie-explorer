@@ -1,0 +1,15 @@
+<p-card class="movie-card" (click)="navigateToDetails()">
+    <ng-template pTemplate="header">
+    <img
+        [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path"
+        [alt]="movie.title"
+        [loading]="optimized ? 'lazy' : null"
+    />
+    </ng-template>
+
+    <div class="movie-info">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.release_date | date }}</p>
+        <p-tag value="{{ movie.vote_average }}" severity="info"></p-tag>
+    </div>
+</p-card>

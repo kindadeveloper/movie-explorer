@@ -1,16 +1,17 @@
-import { Component, signal } from '@angular/core';
+import { AfterViewInit, Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { environment } from '../environments/environment';
+import { PerformanceService } from './core/services/performance.service';
+import { RenderTracker } from './core/utils/render-tracker.directive';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrls: ['./app.scss'],
+  imports: [RouterOutlet]
 })
-export class App {
-  protected readonly title = signal('movie-explorer');
-  constructor() {
-    console.log(environment.optimized);
+export class AppComponent extends RenderTracker implements AfterViewInit {
+
+  ngAfterViewInit() {
+    this.perf.markFirstRender();
   }
 }

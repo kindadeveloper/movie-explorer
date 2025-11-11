@@ -1,0 +1,56 @@
+.movie-header {
+  display: flex;
+  gap: 1rem;
+  img {
+    width: 200px;
+    border-radius: 8px;
+  }
+  .info {
+    flex: 1;
+  }
+}
+
+.cast, .recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  .actor, .rec {
+    width: 120px;
+    text-align: center;
+  }
+  img {
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.reviews {
+  .review {
+    margin-bottom: 1rem;
+    background: var(--surface-section);
+    padding: 1rem;
+    border-radius: 8px;
+  }
+}
+
+.back-button {
+  margin-bottom: 1rem;
+  background: none;
+  border: none;
+  color: var(--primary-color, #3f51b5);
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--primary-700, #2c387e);
+    text-decoration: underline;
+  }
+}

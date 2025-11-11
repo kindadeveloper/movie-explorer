@@ -1,0 +1,40 @@
+.header {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.limit-select {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  background: var(--surface-section);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+}
+
+.limit-select label {
+  font-weight: 500;
+  color: var(--text-color-secondary);
+}
+
+.limit-select p-select {
+  min-width: 10rem;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--surface-section);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+
+  input {
+    width: 100%;
+  }
+}

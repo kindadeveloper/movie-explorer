@@ -1,0 +1,32 @@
+<h2>Change Detection Demo</h2>
+<div class="header">
+    <button pButton label="Increment Counter" (click)="increment()"></button>
+    <p>Counter: {{ counter }}</p>
+    <div class="limit-select">
+        <p-select
+            [options]="[20, 100, 300, 700, 1000]"
+            class="w-12rem" 
+            (onChange)="onLimitChange($event.value)">
+        </p-select>
+    </div>
+    <div class="search-box">
+        <input
+            pInputText
+            placeholder="Search movies..."
+            (input)="onSearchChange($event.target.value)"
+            class="w-20rem"
+        />
+    </div>
+</div>
+
+@if (optimized) {
+    <app-movie-list
+        [movies]="movies$ | async"
+        [optimized]="optimized">
+    </app-movie-list>
+} @else {
+    <app-movie-list
+        [movies]="movies"
+        [optimized]="optimized">
+    </app-movie-list>
+}

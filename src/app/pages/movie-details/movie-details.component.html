@@ -1,0 +1,63 @@
+@if (data) {
+  <button
+    pButton
+    label="Back to list"
+    icon="pi pi-arrow-left"
+    class="p-button-outlined back-button"
+    (click)="goBack()"
+  ></button>
+  <div class="movie-header">
+    <img [src]="'https://image.tmdb.org/t/p/w500' + data.details.poster_path" alt="Poster" />
+    <div class="info">
+      <h1>{{ data.details.title }}</h1>
+      <p><strong>Release date:</strong> {{ data.details.release_date }}</p>
+      <p><strong>Rating:</strong> {{ data.details.vote_average }}</p>
+      <p class="overview">{{ data.details.overview }}</p>
+    </div>
+  </div>
+
+  <h2>Cast</h2>
+  <div class="cast">
+    @for (actor of data.credits.cast.slice(0, 8); track actor.id) {
+      <div class="actor">
+        <img [src]="'https://image.tmdb.org/t/p/w200' + actor.profile_path" alt="{{ actor.name }}" />
+        <p>{{ actor.name }}</p>
+      </div>
+    }
+  </div>
+
+  <h2>Trailers</h2>
+  <div class="videos">
+    @for (video of data.videos.results.slice(0, 2); track video.id) {
+      <iframe
+        width="420"
+        height="235"
+        [src]="video.safeUrl"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    }
+  </div>
+
+  <h2>Reviews</h2>
+  <div class="reviews">
+    @for (review of data.reviews.results.slice(0, 3); track review.id) {
+      <div class="review">
+        <strong>{{ review.author }}</strong>
+        <p>{{ review.content }}</p>
+      </div>
+    }
+  </div>
+
+  <h2>Recommendations</h2>
+  <div class="recommendations">
+    @for (rec of data.recommendations.results.slice(0, 6); track rec.id) {
+      <div class="rec">
+        <img [src]="'https://image.tmdb.org/t/p/w200' + rec.poster_path" alt="{{ rec.title }}" />
+        <p>{{ rec.title }}</p>
+      </div>
+    }
+  </div>
+} @else {
+  <p>Loading movie details...</p>
+}

@@ -1,0 +1,9 @@
+<div class="movie-list">
+    @if (movies && movies.length > 0) {
+        @for (movie of movies; track trackMovie($index, movie)) {
+            <app-movie-card [movie]="movie" [optimized]="optimized"></app-movie-card>
+        }
+    } @else {
+        <p>No movies loaded.</p>
+    }
+</div>

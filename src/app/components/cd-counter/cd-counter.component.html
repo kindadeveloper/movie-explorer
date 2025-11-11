@@ -1,0 +1,6 @@
+<div class="metrics-container">
+    <p-tag severity="info" [value]="'CD: ' + cdCount"></p-tag>
+    <p-tag severity="success" [value]="'TTFR: ' + (metrics.ttfrMs ?? '-') + ' ms'"></p-tag>
+    <p-tag severity="warn" [value]="'Memory: ' + (metrics.memoryUsedMb ?? '-') + ' MB'"></p-tag>
+    <button pButton style="margin-top: 1.5rem" type="button" label="Reset Metrics" icon="pi pi-trash" (click)="reset()"></button>
+</div>

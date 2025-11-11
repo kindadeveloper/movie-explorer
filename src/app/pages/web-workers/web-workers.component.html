@@ -1,0 +1,55 @@
+<div class="p-card web-workers-demo p-4">
+  <h2 class="text-primary text-xl font-semibold mb-2">Web Workers Demo</h2>
+  <p>
+    Demonstrates how heavy computations affect the UI in
+    <strong>
+      {{ optimized ? 'Optimized (Web Worker)' : 'Unoptimized (Main Thread)' }}
+    </strong>
+    mode.
+  </p>
+
+  <div class="flex justify-content-center mb-4">
+    <p-button
+      label="Start Computation"
+      icon="pi pi-play"
+      [loading]="running"
+      (onClick)="startComputation()"
+      [disabled]="running"
+    ></p-button>
+  </div>
+
+  <p>Try interacting with UI while computation runs</p>
+  <div class="ping-container">
+    <p-button
+      label="Ping UI"
+      icon="pi pi-bolt"
+      (onClick)="pingUI()"
+      [disabled]="false"
+    ></p-button>
+    <p-select
+        [options]="options"
+        [formControl]="selectControl"
+        placeholder="Select an option"
+    ></p-select>
+  </div>
+
+  @if (running) {
+    <div class="spinner-container">
+      <p-progressSpinner
+        class="w-4rem h-4rem"
+        strokeWidth="4"
+        fill="transparent"
+        animationDuration=".8s"
+      ></p-progressSpinner>
+      <p class="text-color-secondary">Processing...</p>
+    </div>
+  }
+
+  @if (result) {
+    <p-message
+      [severity]="optimized ? 'success' : 'warn'"
+      [text]="result"
+      class="mt-4"
+    ></p-message>
+  }
+</div>
