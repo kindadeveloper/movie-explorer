@@ -27,9 +27,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": [],
             "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
@@ -56,16 +54,25 @@
             "optimized": {
               "fileReplacements": [
                 {
+                  "replace": "src/app/app.routes.ts",
+                  "with": "src/app/app.routes.optimized.ts"
+                },
+                {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.optimized.ts"
                 }
               ],
-              "optimization": false,
-              "sourceMap": true,
-              "outputHashing": "all"
+              "optimization": true,
+              "sourceMap": false,
+              "outputHashing": "all",
+              "styles": ["src/styles.optimized.scss"]
             },
             "unoptimized": {
               "fileReplacements": [
+                {
+                  "replace": "src/app/app.routes.ts",
+                  "with": "src/app/app.routes.unoptimized.ts"
+                },
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.unoptimized.ts"
@@ -73,7 +80,8 @@
               ],
               "optimization": false,
               "sourceMap": true,
-              "outputHashing": "none"
+              "outputHashing": "none",
+              "styles": ["src/styles.unoptimized.scss"]
             }
           },
           "defaultConfiguration": "production"

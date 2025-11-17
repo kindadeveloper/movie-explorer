@@ -11,16 +11,7 @@ import { RenderTracker } from '../../core/utils/render-tracker.directive';
 
 @Component({
   selector: 'app-web-workers',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ButtonModule,
-    ProgressSpinnerModule,
-    MessageModule,
-    CardModule,
-    SelectModule,
-    ReactiveFormsModule
-  ],
+  standalone: false,
   templateUrl: './web-workers.component.html',
   styleUrls: ['./web-workers.component.scss'],
   changeDetection: environment.optimized

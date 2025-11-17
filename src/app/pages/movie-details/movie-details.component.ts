@@ -1,17 +1,14 @@
 import { Component, ChangeDetectionStrategy, ChangeDetectorRef, OnInit, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from '../../../environments/environment';
 import { TmdbService } from '../../core/services/tmdb.service';
 import { forkJoin } from 'rxjs';
 import { DomSanitizer } from '@angular/platform-browser';
 import { RenderTracker } from '../../core/utils/render-tracker.directive';
-import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-movie-details',
-  standalone: true,
-  imports: [CommonModule, ButtonModule],
+  standalone: false,
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.scss'],
   changeDetection: environment.optimized ? ChangeDetectionStrategy.OnPush : ChangeDetectionStrategy.Default,

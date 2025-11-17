@@ -9,8 +9,7 @@ import { CdCounterComponent } from '../cd-counter/cd-counter.component';
 
 @Component({
   selector: 'app-side-menu',
-  standalone: true,
-  imports: [CommonModule, RouterModule, ButtonModule, TagModule, CdCounterComponent],
+  standalone: false,
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.scss'],
 })

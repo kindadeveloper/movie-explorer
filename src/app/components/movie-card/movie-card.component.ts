@@ -8,8 +8,7 @@ import { RenderTracker } from '../../core/utils/render-tracker.directive';
 
 @Component({
   selector: 'app-movie-card',
-  standalone: true,
-  imports: [CommonModule, CardModule, TagModule],
+  standalone: false,
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss'],
   changeDetection: environment.optimized ? ChangeDetectionStrategy.OnPush : ChangeDetectionStrategy.Default

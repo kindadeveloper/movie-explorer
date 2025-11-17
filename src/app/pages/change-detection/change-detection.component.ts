@@ -10,8 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-change-detection',
-  standalone: true,
-  imports: [CommonModule, MovieListComponent, ButtonModule, SelectModule, InputTextModule],
+  standalone: false,
   templateUrl: './change-detection.component.html',
   styleUrls: ['./change-detection.component.scss'],
   changeDetection: environment.optimized ? ChangeDetectionStrategy.OnPush : ChangeDetectionStrategy.Default

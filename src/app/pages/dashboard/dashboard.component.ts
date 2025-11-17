@@ -6,8 +6,7 @@ import { RenderTracker } from '../../core/utils/render-tracker.directive';
 
 @Component({
   selector: 'app-dashboard',
-  standalone: true,
-  imports: [CommonModule, ChartModule, CardModule],
+  standalone: false,
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
