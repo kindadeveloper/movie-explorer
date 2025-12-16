@@ -1,7 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ChartModule } from 'primeng/chart';
-import { CardModule } from 'primeng/card';
 import { RenderTracker } from '../../core/utils/render-tracker.directive';
 
 @Component({

@@ -1,12 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnDestroy, inject, OnInit, ChangeDetectorRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { environment } from '../../../environments/environment';
-import { ButtonModule } from 'primeng/button';
-import { debounceTime, map, Observable, shareReplay, Subject } from 'rxjs';
-import { MovieListComponent } from '../../components/movie-list/movie-list.component';
+import { debounceTime, Observable, shareReplay, Subject } from 'rxjs';
 import { TmdbService } from '../../core/services/tmdb.service';
-import { SelectModule } from 'primeng/select'
-import { InputTextModule } from 'primeng/inputtext';
 
 @Component({
   selector: 'app-change-detection',

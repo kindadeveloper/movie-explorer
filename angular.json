@@ -65,7 +65,8 @@
               "optimization": true,
               "sourceMap": false,
               "outputHashing": "all",
-              "styles": ["src/styles.optimized.scss"]
+              "styles": ["src/styles.optimized.scss"],
+              "outputPath": "dist/optimized"
             },
             "unoptimized": {
               "fileReplacements": [
@@ -81,7 +82,8 @@
               "optimization": false,
               "sourceMap": true,
               "outputHashing": "none",
-              "styles": ["src/styles.unoptimized.scss"]
+              "styles": ["src/styles.unoptimized.scss"],
+              "outputPath": "dist/unoptimized"
             }
           },
           "defaultConfiguration": "production"
@@ -110,6 +112,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "main": "src/test.ts",
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
